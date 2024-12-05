@@ -1,4 +1,4 @@
-use rocket::http::{RawStr, Status};
+use rocket::http::Status;
 use rocket::{get, routes, Route};
 use std::net::{Ipv4Addr, Ipv6Addr};
 use std::ops::BitXor;

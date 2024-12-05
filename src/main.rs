@@ -1,6 +1,8 @@
 mod day2;
+mod day5;
+
+use rocket::{get, routes};
 use rocket::response::Redirect;
-use rocket::{get, routes, uri};
 
 
 #[get("/")]
@@ -17,7 +19,8 @@ fn seek() -> Redirect {
 async fn main() -> shuttle_rocket::ShuttleRocket {
     let rocket = rocket::build()
         .mount("/", routes![index, seek])
-        .mount("/2", day2::routes());
+        .mount("/2", day2::routes())
+        .mount("/5", day5::routes());
 
     Ok(rocket.into())
 }
