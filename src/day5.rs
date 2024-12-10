@@ -1,37 +1,12 @@
+use crate::requested_content_type::RequestedContentType;
 use cargo_manifest::Manifest;
 use rocket::data::ByteUnit;
 use rocket::form::validate::Contains;
 use rocket::http::Status;
 use rocket::log::private::warn;
-use rocket::request::{FromRequest, Outcome};
-use rocket::{async_trait, post, routes, Data, Request, Route};
+use rocket::{post, routes, Data, Route};
 use shuttle_runtime::__internals::serde_json;
-use std::ops::Deref;
 use std::str::FromStr;
-
-struct RequestedContentType {
-    inner: Option<String>,
-}
-
-#[async_trait]
-impl<'r> FromRequest<'r> for RequestedContentType {
-    type Error = ();
-
-    async fn from_request(request: &'r Request<'_>) -> Outcome<Self, Self::Error> {
-        let header = request.headers().get_one("Content-Type");
-        Outcome::Success(RequestedContentType {
-            inner: header.map(|it| it.to_string()),
-        })
-    }
-}
-
-impl Deref for RequestedContentType {
-    type Target = Option<String>;
-
-    fn deref(&self) -> &Self::Target {
-        &self.inner
-    }
-}
 
 static NO_CONTENT: (Status, &str) = (Status::NoContent, "No Content");
 static UNSUPPORTED_MEDIA: (Status, &str) =
