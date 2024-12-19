@@ -23,10 +23,10 @@ pub struct Day16 {
 impl Day16 {
     pub fn new() -> Self {
         Day16 {
-            signer: RS256.signer_from_pem(&PRIVATE_KEY).unwrap(),
-            verifier: RS256.verifier_from_pem(&PUBLIC_KEY).unwrap(),
-            santa_verifier: RS256.verifier_from_pem(&SANTA_PUBLIC_KEY).unwrap(),
-            santa_verifier_rs512: RS512.verifier_from_pem(&SANTA_PUBLIC_KEY).unwrap(),
+            signer: RS256.signer_from_pem(PRIVATE_KEY).unwrap(),
+            verifier: RS256.verifier_from_pem(PUBLIC_KEY).unwrap(),
+            santa_verifier: RS256.verifier_from_pem(SANTA_PUBLIC_KEY).unwrap(),
+            santa_verifier_rs512: RS512.verifier_from_pem(SANTA_PUBLIC_KEY).unwrap(),
         }
     }
 }
