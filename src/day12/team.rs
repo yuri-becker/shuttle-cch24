@@ -8,7 +8,7 @@ impl Team {
     pub fn symbol(&self) -> &'static str {
         match self {
             Team::Cookie => "🍪",
-            Team::Milk => "🥛"
+            Team::Milk => "🥛",
         }
     }
 }

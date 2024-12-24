@@ -1,13 +1,13 @@
-use rocket::{put, Data, State};
-use sqlx::{query, query_as, PgPool};
-use rocket::http::Status;
-use uuid::Uuid;
-use log::warn;
-use rocket::data::ByteUnit;
-use std::ops::Deref;
-use rocket::serde::{Deserialize, Serialize};
 use crate::day19::quote::Quote;
 use crate::day19::schema::{CITE, UNDO};
+use log::warn;
+use rocket::data::ByteUnit;
+use rocket::http::Status;
+use rocket::serde::{Deserialize, Serialize};
+use rocket::{put, Data, State};
+use sqlx::{query, query_as, PgPool};
+use std::ops::Deref;
+use uuid::Uuid;
 
 #[derive(Serialize, Deserialize)]
 struct QuoteRequest {

@@ -1,12 +1,12 @@
+use crate::day19::schema::RESET;
+use log::warn;
+use rocket::http::Status;
 use rocket::{post, State};
 use sqlx::{query, PgPool};
-use rocket::http::Status;
-use log::warn;
 use std::ops::Deref;
-use crate::day19::schema::RESET;
 
 #[post("/reset")]
-pub  async fn reset(db: &State<PgPool>) -> Result<(), Status> {
+pub async fn reset(db: &State<PgPool>) -> Result<(), Status> {
     query(RESET)
         .execute(db.deref())
         .await

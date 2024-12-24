@@ -9,8 +9,7 @@ use shuttle_runtime::__internals::serde_json;
 use std::str::FromStr;
 
 static NO_CONTENT: (Status, &str) = (Status::NoContent, "No Content");
-static UNSUPPORTED_MEDIA: (Status, &str) =
-    (Status::UnsupportedMediaType, "Unsupported Media Type");
+static UNSUPPORTED_MEDIA: (Status, &str) = (Status::UnsupportedMediaType, "Unsupported Media Type");
 static INVALID_MANIFEST: (Status, &str) = (Status::BadRequest, "Invalid manifest");
 
 #[post("/manifest", data = "<body>")]

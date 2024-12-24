@@ -1,14 +1,14 @@
-use rocket::{post, Data, State};
-use sqlx::{query, query_as, PgPool};
-use rocket::http::Status;
-use rocket::data::ByteUnit;
-use log::warn;
-use uuid::Uuid;
-use chrono::Local;
-use std::ops::Deref;
-use rocket::serde::{Deserialize, Serialize};
 use crate::day19::quote::Quote;
 use crate::day19::schema::{CITE, DRAFT};
+use chrono::Local;
+use log::warn;
+use rocket::data::ByteUnit;
+use rocket::http::Status;
+use rocket::serde::{Deserialize, Serialize};
+use rocket::{post, Data, State};
+use sqlx::{query, query_as, PgPool};
+use std::ops::Deref;
+use uuid::Uuid;
 #[derive(Serialize, Deserialize)]
 struct DraftRequest {
     author: String,

@@ -1,5 +1,5 @@
-use rocket::{async_trait, Request};
 use rocket::request::{FromRequest, Outcome};
+use rocket::{async_trait, Request};
 use std::ops::Deref;
 
 pub struct RequestedContentType {

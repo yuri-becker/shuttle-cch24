@@ -23,6 +23,8 @@ challenges. Every challenge uses [rocket](https://crates.io/crates/rocket) and [
 | [day9.rs](https://github.com/yuri-becker/shuttle-cch24/blob/main/src/day9.rs)           | Leaky Bucket rate limiting                         | [leaky_bucket](https://crates.io/crates/leaky_bucket)                                                        |
 | [day12/mod.rs](https://github.com/yuri-becker/shuttle-cch24/blob/main/src/day12/mod.rs) | Connect 4, seeded random                           | [rand](https://crates.io/crates/rand)                                                                        |
 | [day16/mod.rs](https://github.com/yuri-becker/shuttle-cch24/blob/main/src/day16/mod.rs) | JWT                                                | [josekit](https://crates.io/crates/josekit)                                                                  |
+| [day19/mod.rs](https://github.com/yuri-becker/shuttle-cch24/blob/main/src/day19/mod.rs) | Database, Pagination                               | [sqlx](https://crates.io/crates/sqlx)                                                                        |
+| [day23/mod.rs](https://github.com/yuri-becker/shuttle-cch24/blob/main/src/day23/mod.rs) | htmx, FormData, TOML                               | [toml](https://crates.io/crates/toml)                                                                        |
 
 ## Usage
 

@@ -81,9 +81,9 @@ impl Grid {
             .to_string()
             + "\n⬜⬜⬜⬜⬜⬜\n"
             + &self
-            .determine_winner()
-            .map(|winner| winner.message())
-            .unwrap_or("".to_string())
+                .determine_winner()
+                .map(|winner| winner.message())
+                .unwrap_or("".to_string())
     }
 
     pub fn place(&mut self, column: usize, team: &Team) -> Result<(), PlaceError> {
@@ -113,7 +113,7 @@ impl Grid {
                 let tile = rng.gen::<bool>();
                 let tile = match tile {
                     false => Tile::Milk,
-                    true => Tile::Cookie
+                    true => Tile::Cookie,
                 };
                 grid.0[row][col] = tile;
             }

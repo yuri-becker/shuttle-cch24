@@ -1,11 +1,11 @@
-use rocket::{delete, State};
-use sqlx::{query, query_as, PgPool};
-use rocket::http::Status;
-use uuid::Uuid;
-use log::warn;
-use std::ops::Deref;
 use crate::day19::quote::Quote;
 use crate::day19::schema::{CITE, REMOVE};
+use log::warn;
+use rocket::http::Status;
+use rocket::{delete, State};
+use sqlx::{query, query_as, PgPool};
+use std::ops::Deref;
+use uuid::Uuid;
 
 #[delete("/remove/<id>")]
 pub async fn remove(id: &str, db: &State<PgPool>) -> Result<Quote, Status> {

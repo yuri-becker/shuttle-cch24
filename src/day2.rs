@@ -40,7 +40,7 @@ fn key(from: &str, to: &str) -> Result<String, Status> {
 
 #[get("/v6/dest?<from>&<key>")]
 fn v6_dest(from: &str, key: &str) -> Result<String, Status> {
-        let from = Ipv6Addr::from_str(from)
+    let from = Ipv6Addr::from_str(from)
         .map_err(|_| Status::BadRequest)?
         .octets();
     let key = Ipv6Addr::from_str(key)

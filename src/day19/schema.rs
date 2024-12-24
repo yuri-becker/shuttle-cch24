@@ -12,7 +12,7 @@ pub const RESET: &str = "DELETE FROM quotes;";
 pub const CITE: &str = "SELECT * FROM quotes WHERE id=$1";
 pub const LIST: &str = "SELECT * FROM quotes ORDER BY created_at ASC LIMIT $1 OFFSET $2;";
 
-pub  const COUNT: &str = "SELECT COUNT(*) AS count FROM quotes;";
+pub const COUNT: &str = "SELECT COUNT(*) AS count FROM quotes;";
 pub const REMOVE: &str = "DELETE FROM quotes WHERE id=$1";
 pub const UNDO: &str = "UPDATE quotes SET author=$1, quote=$2, version = version + 1 WHERE id=$3";
 pub const DRAFT: &str = "INSERT INTO quotes (id, author, quote, created_at, version) \

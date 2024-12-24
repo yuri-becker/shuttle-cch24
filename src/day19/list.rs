@@ -42,7 +42,11 @@ pub async fn list(token: Option<String>, db: &State<PgPool>) -> Result<Page, Sta
     let response = Page {
         page: page + 1,
         quotes,
-        next_token: if items_left { Some(page_to_token(page + 1)) } else { None }
+        next_token: if items_left {
+            Some(page_to_token(page + 1))
+        } else {
+            None
+        },
     };
     info!("Response is {:?}", response);
     Ok(response)
